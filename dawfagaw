@@ -1,0 +1,10 @@
+wait(2)
+local msg = '/ih' -- fh or ih
+
+for i=1, 50 do -- you can change the '50' to a different number to get more hats
+    game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar:CaptureFocus()
+    game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.Text = msg
+    for i,v in next, getconnections(game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.FocusLost) do
+    v:Fire(true, {UserInputState = Enum.UserInputState.Begin, UserInputType = Enum.UserInputType.Keyboard, KeyCode = Enum.KeyCode.Return})
+    end
+end
